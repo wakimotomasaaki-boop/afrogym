@@ -39,34 +39,57 @@ body { background: var(--cream); color: var(--warm-black); font-family: 'Jost', 
   .header-logo img { height: 28px; }
   .header-nav { display: none; }
   .header-cta { font-size: 8.5px; }
-}
-
-/* ── HERO ── */
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding-top: 64px;
+  background: var(--cream);
 }
 @media (max-width: 768px) {
   .hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 52vw;
     min-height: auto;
     padding-top: 56px;
   }
 }
 
-.hero-left {
-  display: flex; flex-direction: column; justify-content: center;
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 4rem 3.5rem 4rem 3rem;
-  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media (max-width: 768px) {
-  .hero-left { padding: 2.8rem 1.6rem 2.4rem; }
+  .hero-container { padding: 2.8rem 1.6rem 2.4rem; }
+}
+
+/* 中央のメインロゴ（キャッチコピーの上に綺麗に並びます） */
+.hero-main-logo {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+.hero-main-logo img {
+  width: 50%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .hero-main-logo { margin-bottom: 2rem; text-align: center; }
+  .hero-main-logo img { width: 75%; max-width: 280px; margin: 0 auto; }
+}
+
+.hero-content {
+  max-width: 600px;
+}
+@media (max-width: 768px) {
+  .hero-content { text-align: center; margin: 0 auto; }
 }
 
 .hero-tag { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 2rem; }
+@media (max-width: 768px) {
+  .hero-tag { justify-content: center; }
+}
 .hero-tag-line { width: 28px; height: 1px; background: var(--sage); }
 .hero-tag-text { font-size: 8px; letter-spacing: 0.4em; color: var(--sage); text-transform: uppercase; }
 
@@ -84,6 +107,47 @@ body { background: var(--cream); color: var(--warm-black); font-family: 'Jost', 
   font-size: 12px; font-weight: 300; line-height: 2.2;
   color: var(--mid); letter-spacing: 0.05em;
   margin-bottom: 3rem; max-width: 340px;
+}
+@media (max-width: 768px) {
+  .hero-sub { margin: 0 auto 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">
+    <img src="https://raw.githubusercontent.com/wakimotomasaaki-boop/afrogym/main/gym_logo_small.png" alt="アフロジムロゴ">
+  </div>
+  <ul class="header-nav">
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#pillars">Pillars</a></li>
+    <li><a href="#space">Space</a></li>
+  </ul>
+  <div class="header-cta">Contact</div>
+</header>
+
+<main class="hero">
+  <div class="hero-container">
+    
+    <div class="hero-main-logo">
+      <img src="https://raw.githubusercontent.com/wakimotomasaaki-boop/afrogym/main/hero_logo_text_outline.png" alt="AFRO GYM MAIN LOGO">
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <div class="hero-tag-line"></div>
+        <div class="hero-tag-text">Mindfulness × Street</div>
+      </div>
+      <h1 class="hero-headline">極限の集中、<br>そこは<em>新しい自分</em>。</h1>
+      <p class="hero-sub">圧倒的な効率性で、心身を極限まで研ぎ澄ます。無駄を削ぎ落とした空間で、かつてないマインドフルネスを体感せよ。</p>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
 }
 @media (max-width: 768px) {
   .hero-sub { font-size: 11.5px; margin-bottom: 2rem; max-width: 100%; }
